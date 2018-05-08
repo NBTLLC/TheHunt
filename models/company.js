@@ -55,4 +55,6 @@ module.exports = function(sequelize, DataTypes) {
       len: [65,535]
     }
   });
+
+  return Company;
 };
