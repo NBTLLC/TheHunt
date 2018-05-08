@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add a new Company</title>
+</head>
+<body>
+    <div>
+            <form action="/api/add_company" method="post">
+                
+                <label for="companyName">Enter Company Name: </label>
+                <input id="companyName" type="text" name="name_field" value="" placeholder="">
+
+                <label for="positionTitle">Position Title: </label>
+                <input id="positionTitle" type="text" name="name_field" value="" placeholder="">
+
+                <label for="dateAdded">Date added to <span>The<span></span>Hunt</span> </label>
+                <input id="dateAdded" type="text" name="name_field" value="" placeholder="">
+
+                <label for="websiteURL">Website URL: </label>
+                <input id="websiteURL" type="url" name="name_field" value="" placeholder="">
+
+                <label for="hiringManagerName">Hiring Manager Name: </label>
+                <input id="hiringManagerName" type="text" name="name_field" value="" placeholder="">
+
+                <label for="hiringManagerPhone">Hiring Manager Phone: </label>
+                <input id="hiringManagerPhone" type="text" name="name_field" value="" placeholder="">
+
+                <label for="hiringManagerEmail">Hiring Manager Email: </label>
+                <input id="hiringManagerEmail" type="email" name="name_field" value="" placeholder="">
+
+                <label for="companyNotes">Notes:</label>
+                <textarea 
+                    placeholder="This area is for general notes about the company and for the interview" 
+                    class="" rows="10" id="companyNotes">
+                </textarea>
+                
+                <input type="submit" value="OK">
+        </form>
+    </div>
+
+
+
+</body>
+</html>
