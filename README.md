@@ -1,8 +1,6 @@
 
 
 
-<!-- This is a basic template for ReadMe files -->
-
 # bamazon
 A basic Storefront that uses Node.js and MySQL.
   
@@ -47,7 +45,6 @@ This app is meant to showcase the ability to interact with a server using MySQL 
 ### 2-Technologies  :computer:
 
   This project utilizes the following technologies:
-  > **Note: Delete this note and the following technologies that do not apply.**
 
 
 
