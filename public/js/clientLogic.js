@@ -1,5 +1,6 @@
 
 $(document).ready(function () {
+    // allows materialize form select dropdown to work
     $('select').formSelect();
 
 
@@ -74,11 +75,12 @@ $(document).ready(function () {
         hiring_manager_name: hiringManagerNameInput.val().trim(),
         hiring_manager_phone: hiringManagerPhoneInput.val().trim(),
         hiring_manager_email: hiringManagerEmailInput.val().trim(),
-        conpany_notes: companyNotesInput.val().trim(),
+        company_notes: companyNotesInput.val().trim(),
         board_position: boardPositionInput.val()
+        // add in selection of drop down
     };
 
-    console.log(newCompany);
+    console.log(boardPositionInput.val());
 
     // If we're updating a company run updateCompany to update a company
     // Otherwise run submitCompany to create a whole new company
@@ -112,7 +114,7 @@ $(document).ready(function () {
     function submitCompany(Company) {
         $.post("/api/companies/", Company, function () {
             // returns to the main page, with the added company now added
-            window.location.href = "/";
+            window.location.href = "/"; // page loads home handlebars file showcasing all db data
         });
     }
 

@@ -10,14 +10,22 @@ module.exports = function (app) {
 
     // html route loads view.html
     app.get("/", function (req, res) {
-        console.log(req);
-        console.log(res);
+        // console.log(req);
+        // console.log(res);
+        //============================
+        // res.sendFile(path.join(__dirname, "../public/add_company_form.html"));
+        //============================
+        Company.findAll({})
+            .then(function (company_data) {
+                console.log(company_data);
+                return res.render('index', { company_data })
+            })
+        //============================
         
-        res.sendFile(path.join(__dirname, "../public/add_company_form.html"));
     });
     // api route loads all companies from database
-    app.get("/api/posts/", function (req, res) {
-        db.Post.findAll({})
+    app.get("/api/companies", function (req, res) {
+        db.Company.findAll({})
             .then(function (the_hunt_db) {
                 res.json(the_hunt_db);
             });
@@ -41,14 +49,14 @@ module.exports = function (app) {
             });
     });
     // api route for retrieving a single company's information
-    app.get("/api/posts/:id", function (req, res) {
-        db.Post.findOne({
+    app.get("/api/companies/:id", function (req, res) {
+        db.Company.findOne({
             where: {
                 id: req.params.id
             }
         })
-            .then(function (dbPost) {
-                res.json(dbPost);
+            .then(function (the_hunt_db) {
+                res.json(the_hunt_db);
             });
     });
 
