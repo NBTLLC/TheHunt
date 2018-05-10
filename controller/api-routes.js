@@ -15,7 +15,7 @@ module.exports = function (app) {
         //============================
         // res.sendFile(path.join(__dirname, "../public/add_company_form.html"));
         //============================
-        Company.findAll({})
+        db.Company.findAll({})
             .then(function (company_data) {
                 console.log(company_data);
                 return res.render('index', { company_data })
