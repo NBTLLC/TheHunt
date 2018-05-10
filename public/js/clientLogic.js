@@ -1,8 +1,8 @@
 
 $(document).ready(function () {
-    // allows materialize form select dropdown to work
+    // allows materialize form select dropdown and modal to work
     $('select').formSelect();
-
+    $('.modal').modal();
 
     var url = window.location.search;
     var companyId;
