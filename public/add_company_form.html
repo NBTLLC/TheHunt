@@ -5,42 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add a new Company</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./dependancies/materialize/css/materialize.min.css">
 </head>
 <body>
-    <div>
-            <form action="/api/add_company" method="post">
-                
-                <label for="companyName">Enter Company Name: </label>
-                <input id="companyName" type="text" name="name_field" value="" placeholder="">
-
-                <label for="positionTitle">Position Title: </label>
-                <input id="positionTitle" type="text" name="name_field" value="" placeholder="">
-
-                <label for="dateAdded">Date added to <span>The<span></span>Hunt</span> </label>
-                <input id="dateAdded" type="text" name="name_field" value="" placeholder="">
-
-                <label for="websiteURL">Website URL: </label>
-                <input id="websiteURL" type="url" name="name_field" value="" placeholder="">
-
-                <label for="hiringManagerName">Hiring Manager Name: </label>
-                <input id="hiringManagerName" type="text" name="name_field" value="" placeholder="">
-
-                <label for="hiringManagerPhone">Hiring Manager Phone: </label>
-                <input id="hiringManagerPhone" type="text" name="name_field" value="" placeholder="">
-
-                <label for="hiringManagerEmail">Hiring Manager Email: </label>
-                <input id="hiringManagerEmail" type="email" name="name_field" value="" placeholder="">
-
-                <label for="companyNotes">Notes:</label>
-                <textarea 
-                    placeholder="This area is for general notes about the company and for the interview" 
-                    class="" rows="10" id="companyNotes">
-                </textarea>
-                
+    
+<div class="container">
+    <div class="row">
+        <form class="col s12" action="/api/add_company" method="post" id="newCompanyForm">
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="companyName">Enter Company Name: (required) </label>
+                    <input id="companyName" type="text" name="company_name" value="" placeholder="" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="positionTitle">Position Title: (required)</label>
+                    <input id="positionTitle" type="text" name="position_title" value="" placeholder="" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="dateAdded">Date added to<span>The<span></span>Hunt</span> (mm/dd/yy): (required)</label>
+                    <input id="dateAdded" type="text" name="date_added" value="" placeholder="" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="websiteURL">Website URL: </label>
+                    <input id="websiteURL" type="url" name="website_url" value="" placeholder="" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="hiringManagerName">Hiring Manager Name: </label>
+                    <input id="hiringManagerName" type="text" name="hiring_manager_name" value="" placeholder="" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="hiringManagerPhone">Hiring Manager Phone: </label>
+                    <input id="hiringManagerPhone" type="text" name="hiring_manager_phone" value="" placeholder="" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="hiringManagerEmail">Hiring Manager Email: </label>
+                    <input id="hiringManagerEmail" type="email" name="hiring_manager_email" value="" placeholder="" >
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="companyNotes">Notes:</label>
+                        <textarea name="company_notes" placeholder="This area is for general notes about the company and for the interview" class="" rows="10" id="companyNotes"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select id="boardPosition" name="board_position">
+                            <option value="" disabled selected>Select your current status of this company</option>
+                            <option value="Interested">Interested</option>
+                            <option value="Applied">Applied</option>
+                            <option value="Phone">Phone</option>
+                            <option value="Technical">Technical</option>
+                            <option value="Offer">Offer</option>
+                            <option value="Decline">Decline</option>
+                        </select>
+                        <label>Materialize Select</label>
+                    </div>
+                </div>
                 <input type="submit" value="OK">
         </form>
-    </div>
+        </div>
 
+</div>
+    
+    <!-- jQuery external link -->
+    <script src="./dependancies/jquery-3.3.1.min.js"></script>
+    <!-- Materialize JS external link -->
+    <script src="./dependancies/materialize/js/materialize.min.js"></script>
+    <!-- JS external file link -->
+    <script src="./js/clientLogic.js"></script>
 
 
 </body>
