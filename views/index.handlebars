@@ -1,0 +1,158 @@
+{{!-- body of the main page for The Hunt Website --}}
+
+{{!-- navbar and title --}}
+<div class="body-container">
+    <div class="navbar" id="top">
+        <div class="row valign-wrapper center-align">
+            <div class="col s1">
+                <a class="btn modal-trigger btn-floating btn-large waves-effect waves-light add-company-button" data-target="modal1" href="#modal1">
+                    <i class="material-icons">add</i>
+                </a>
+            </div>
+            <h1 class="col s10 "><span class="fancy-title">The</span> <span class="serious-title">Hunt</span></h1>
+            <div class="col s1">
+                <a class="btn-floating btn-large waves-effect waves-light page-options-button">
+                    <i class="material-icons">dehaze</i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+{{!-- main trello board section --}}
+<div class="board-container">
+    {{!-- main headings --}}
+    <div class="main-column-header-style" id="background">
+        <div class="row">
+            <div class="col s4 center main-column-header">Think</div>
+            <div class="col s4 center main-column-header">Plan</div>
+            <div class="col s4 center main-column-header">Execute</div>  
+        </div>
+    </div>
+       
+    {{!-- sub headings --}}
+    <div class="sub-column-headers" id="headers">
+        <div class="row">
+            <div class="col s4 main-column-section" id="column 1">
+                <div class="row">
+                    <div class="col s6">
+                        <div class="col-content sub-column-content-odd">
+                            <h5>Interested</h5>
+                            {{!-- <div id="interestedCompanies"></div> --}}
+                            {{#each companies}}
+                                {{#if rejected}}
+                                     {{> companies/company-block}}
+                                {{/if}}
+                            {{/each}}
+                        </div> 
+                    </div>
+                    <div class="col s6">
+                        <div class="col-content sub-column-content-even">
+                            <h5>Applied</h5>
+                            {{!-- <div id="appliedCompanies"></div> --}}
+                             {{#each companies}} 
+                                {{#if applied}} 
+                                    {{> companies/company-block}} 
+                                {{/if}} 
+                             {{/each}}
+                            
+                        </div> 
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col s4 main-column-section" id="column 2">
+                <div class="row">
+                    <div class="col s6">
+                        <div class="col-content sub-column-content-odd">
+                            <h5>Phone</h5>
+                            {{!-- <div id="phoneCompanies"></div> --}}
+                            {{#each companies}}
+                                {{#if phone}}
+                                     {{> companies/company-block}}
+                                {{/if}}
+                            {{/each}}
+                            
+                        </div>
+                    </div>
+                    <div class="col s6">
+                        <div class="col-content sub-column-content-even">
+                            <h5>In-Person</h5>
+                            {{!-- <div id="inPersonCompanies"></div> --}}
+                            {{#each companies}}
+                                {{#if in}}
+                                     {{> companies/company-block}}
+                                {{/if}}
+                            {{/each}}
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col s4 main-column-section" id="column 3">
+                <div class="row">
+                        <div class="col s6">
+                            <div class="col-content sub-column-content-odd">
+                                <h5>Offer</h5>
+                                {{!-- <div id="offerCompanies"></div> --}}
+                                {{#each companies}}
+                                {{#if rejected}}
+                                     {{> companies/company-block}}
+                                {{/if}}
+                            {{/each}}
+                                
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="col-content sub-column-content-even">
+                                <h5>Rejected</h5>
+                                {{!-- <div id="rejectedCompanies"> --}}
+                                 {{#each companies}}
+                                {{#if rejected}}
+                                     {{> companies/company-block}}
+                                {{/if}}
+                            {{/each}}   
+
+                                </div>
+                                
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+    </div>
+    <main>
+
+        <ul id="handleBarsHTML">
+            <!-- example of s -->
+            <ul>
+                {{#each jobs}}
+                <li>
+                    <p>
+                        <span class="label">ID:</span> {{this.id}}</p>
+                    <p>
+                        <span class="label">Company Name:</span> {{this.companyNamp}}</p>
+                    <p>
+                        <span class="label">Hiring Manager:</span> {{this.hiringManager}}</p>
+                </li>
+                {{/each}}
+            </ul>
+        </ul>
+
+    </main>
+
+</div>
+
+{{!--  add a company modal --}}
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>Modal Header</h4>
+        <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+</div>

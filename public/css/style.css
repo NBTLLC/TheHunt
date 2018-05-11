@@ -1,0 +1,122 @@
+/* CSS styling for The Hunt Website */
+
+/* imported font families */
+
+/* font-family: 'Open Sans', sans-serif;
+font-family: 'Anton', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Great Vibes', cursive; */
+
+/* CSS Variables */
+/* NOTE: IF COLOR PALETTE FOR PAGE NEEDS TO CHANGE, CHANGE IT HERE */
+
+/* To reference in css use syntax ->  var(--whatever-the-root-colorname-is)*/
+
+:root {
+  --light-blue:#88BDBC;
+  --blue:#254E58;
+  --dark-blue:#112D32;
+  --brown:#4F4A41;
+  --light-brown:#6E6658;
+  --white: #FFFFFF; 
+  --black: #00000F;
+}
+
+body {
+    background-color: var(--black);
+    box-sizing: border-box;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Title styles */
+
+.fancy-title {
+    font-family: 'Great Vibes', cursive;
+}
+
+.serious-title {
+    font-family: 'Anton', sans-serif;
+}
+
+/* NavBar */
+
+.navbar {
+    background-color: var(--light-blue);
+}
+
+.add-company-button {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    font-family: 'Anton', sans-serif;
+    padding: 0 15px;
+}
+.add-company-button:hover {
+   background-color: var(--blue);
+}
+.page-options-button {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    font-family: 'Anton', sans-serif;
+    padding: 0 15px;
+}
+.page-options-button:hover {
+    background-color: var(--blue);
+}
+
+/* job board */
+
+.board-container{
+    width: 95%;
+    margin: 0 auto;
+}
+
+/*  3 main column headers  */
+
+.main-column-header-style {
+    /* color: var(--white);
+    font-size: 2em; */
+    /* background-color: blue; */
+}
+.main-column-header {
+    color: var(--white);
+    font-size: 2.5em;
+    /* background-color: blue; */
+}
+
+.main-column-section {
+    border-radius: 10px;
+}
+.main-column-section:nth-child(odd) {
+background-color: var(--light-blue)
+
+}
+.main-column-section:nth-child(even) {
+background-color: var(--light-brown)
+
+}
+
+/*  6 sub column headers  */
+
+.sub-column-headers {
+    
+    
+}
+
+.sub-column-content-odd {
+    margin-top: 5px;
+    padding: 5px;
+    text-align: center;
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 10px;
+}
+.sub-column-content-even {
+    margin-top: 5px;
+    padding: 5px;
+    text-align: center;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    border-radius: 10px;
+}
+
