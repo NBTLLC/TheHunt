@@ -1,26 +1,52 @@
 
 $(document).ready(function () {
     // allows materialize form select dropdown and modal to work
+    
+    // initializes materialize functionality
     $('select').formSelect();
     $('.modal').modal();
 
+    // modal triggers
+    $('#inputModalTrigger').on("click", function() {
+        
+        $('#companyInputModal').modal('open');
+    });
+
+    $('#deleteButtonConfirmation').on("click", function() {
+        console.log(1);
+        
+        $('#confirmDelete').modal('open');
+    });
+
+
+
+
     var url = window.location.search;
     var companyId;
+    var currentCompany;
     // Sets a flag for whether or not we're updating a company to be false initially
     var updating = false;
     // ============================
     // If we have this section in our url, we pull out the company id from the url
     // In localhost:8080/?company_id=1, companyId is 1
     // this comes from the logic below from the blog.js in blog file
-    /*
-    $(document).on("click", "button.edit", handleCompanyEdit); // needs to be on click of company box
+    
+    $("div[data-group='company'").on("click", handleCompanyEdit); // needs to be on click of company box
         //------------------
-      function handleCompanyEdit() {
-    var currentCompany = $(this).parent().parent().data("company");
-    window.location.href = "/?company_id=" + currentCompany.id;
-    // trigger modal popup
-    }    
-    */
+    
+        
+    function handleCompanyEdit() {
+        // console.log(this);
+        
+        // $('#companyInputModal').modal('open');
+        currentCompany = $(this).attr("id");
+        // console.log(currentCompany);
+        getCompanyData(currentCompany);
+        // window.location.href = "/?company_id=" + currentCompany;
+        $('#companyInputModal').modal('open');
+        console.log(updating);
+    }
+    
 
 
     /*
@@ -37,11 +63,11 @@ $(document).ready(function () {
     // ============================
 
 
-    if (url.indexOf("?company_id=") !== -1) {
-        //trigger modal popup
-        companyId = url.split("=")[1];
-        getCompanyData(companyId);
-    }
+    // if (url.indexOf("?company_id=") !== -1) {
+    //     //trigger modal popup
+    //     companyId = url.split("=")[1];
+    //     getCompanyData(companyId);
+    // }
 
     // Getting jQuery references to the company inputs on input form
     var companyNameInput = $("#companyName");
@@ -80,13 +106,15 @@ $(document).ready(function () {
         // add in selection of drop down
     };
 
-    console.log(boardPositionInput.val());
+    console.log(111111,boardPositionInput.val());
 
     // If we're updating a company run updateCompany to update a company
     // Otherwise run submitCompany to create a whole new company
+    
+    
     if (updating) {
-        newCompany.id = companyId;
-        updateCompany(newCompany);
+        newCompany.id = currentCompany;        
+        updateCompany(newCompany, newCompany.id);
     }
     else {
         submitCompany(newCompany);
@@ -100,12 +128,15 @@ $(document).ready(function () {
     function getCompanies(category) {
         $.get("/api/companies", function (data) {
             console.log("Companies", data);
-            companies = data;
-            if (!companies || !companies.length) {
+             
+            if (!data || !data.length) {
                 // displayEmpty(); //function that has a preset message showing no companies yet added
             }
             else {
                 // initializeRows(); // uses db data for companies to generate rows
+                // handlebars.js helper alterations
+
+                
             }
         });
     }
@@ -121,22 +152,30 @@ $(document).ready(function () {
     // Gets company data for a company if we're editing
     function getCompanyData(id) {
         $.get("/api/companies/" + id, function (data) {
+            console.log(data);
+            
             if (data) {
-                var returnedData = checkIfDataNull(data);
-                // If this company has existing information, prefill our company form with its data
-                companyNameInput.val(returnedData.companyData.companyName);
-                positionTitleInput.val(returnedData.companyData.positionTitle);
-                dateAddedInput.val(returnedData.companyData.dateAdded);
-                websiteURLInput.val(returnedData.companyData.websiteURL);
-                hiringManagerNameInput.val(returnedData.companyData.hiringManagerName);
-                hiringManagerPhoneInput.val(returnedData.companyData.hiringManagerPhone);
-                hiringManagerEmailInput.val(returnedData.companyData.hiringManagerEmail);
-                companyNotesInput.val(returnedData.companyData.companyNotes);
-                boardPositionInput.val(returnedData.companyData.boardPosition);
-        
+
                 // If we have a company with this id, set a flag for us to know to update the company
                 // when we hit submit
                 updating = true;
+                console.log(updating);
+                
+                var returnedData = checkIfDataNull(data);
+                console.log(22222,returnedData);
+                
+                // If this company has existing information, prefill our company form with its data
+                companyNameInput.val(returnedData.companyName);
+                positionTitleInput.val(returnedData.positionTitle);
+                dateAddedInput.val(returnedData.dateAdded);
+                websiteURLInput.val(returnedData.websiteURL);
+                hiringManagerNameInput.val(returnedData.hiringManagerName);
+                hiringManagerPhoneInput.val(returnedData.hiringManagerPhone);
+                hiringManagerEmailInput.val(returnedData.hiringManagerEmail);
+                companyNotesInput.val(returnedData.companyNotes);
+                boardPositionInput.val(returnedData.boardPosition);
+        
+                
             }
         });
     }
@@ -186,10 +225,18 @@ $(document).ready(function () {
     }
 
     // Update a given company, bring user to the blog page when done
-    function updateCompany(company) {
+    function updateCompany(company, id) {
+        console.log(id);
+        
+        var idConv = id.toString();
+        console.log(idConv);
+        var url = "/api/companies/"+idConv;
+        console.log(url);
+        
+        
         $.ajax({
             method: "PUT",
-            url: "/api/companies",
+            url: url,
             data: company
         })
             .then(function () {
