@@ -12,18 +12,64 @@ font-family: 'Great Vibes', cursive; */
 
 /* To reference in css use syntax ->  var(--whatever-the-root-colorname-is)*/
 
-:root {
-  --light-blue:#88BDBC;
-  --blue:#254E58;
-  --dark-blue:#112D32;
-  --brown:#4F4A41;
-  --light-brown:#6E6658;
+/* original color palette */
+/* :root {
+  --primary-color-1:#88BDBC;
+  --accent-color-1:#254E58;
+  --primary-color-2:#112D32;
+  --accent-color-2:#4F4A41;
+  --primary-color-3:#6E6658;
   --white: #FFFFFF; 
   --black: #00000F;
-}
+  --background: #00000F;
+} */
+/* palette 2 */
+/* :root {
+  --primary-color-1:#41B3A3;
+  --accent-color-1:#C38D93;
+  --primary-color-2:#254E58;
+  --accent-color-2:#85DCB;
+  --primary-color-3:#E8A87C;
+  --white: #FFFFFF; 
+  --black: #00000F;
+  --background: #C38D93;
+} */
+/* palette 3 */
+/* :root {
+  --primary-color-1:#2F2FA2;
+  --accent-color-1:#F64C72;
+  --primary-color-2:#553D67;
+  --accent-color-2:#99738E;
+  --primary-color-3:#242582;
+  --white: #FFFFFF; 
+  --black: #00000F;
+  --background: #99738E;
+}  */
+/* palette 4 */
+/* :root {
+  --primary-color-1:#3500D3;
+  --accent-color-1:#240090;
+  --primary-color-2:#190061;
+  --accent-color-2:#0C0032;
+  --primary-color-3:#28288;
+  --white: #FFFFFF; 
+  --black: #00000F;
+  --background: #00000F;
+}  */
+/* palette 5 */
+:root {
+  --primary-color-1:#C3073F;
+  --accent-color-1:#950740;
+  --primary-color-2:#6F2232;
+  --accent-color-2:#0C0032;
+  --primary-color-3:#4E4E50;
+  --white: #FFFFFF; 
+  --black: #00000F;
+  --background: #00000F;
+} 
 
 body {
-    background-color: var(--black);
+    background-color: var(--background);
     box-sizing: border-box;
     /* font-family: 'Roboto', sans-serif; */
     font-family: 'Open Sans', sans-serif;
@@ -42,26 +88,26 @@ body {
 /* NavBar */
 
 .navbar {
-    background-color: var(--light-blue);
+    background-color: var(--primary-color-1);
 }
 
 .add-company-button {
-    background-color: var(--dark-blue);
+    background-color: var(--primary-color-2);
     color: var(--white);
     font-family: 'Anton', sans-serif;
     padding: 0 15px;
 }
 .add-company-button:hover {
-   background-color: var(--blue);
+   background-color: var(--accent-color-1);
 }
 .page-options-button {
-    background-color: var(--dark-blue);
+    background-color: var(--primary-color-2);
     color: var(--white);
     font-family: 'Anton', sans-serif;
     padding: 0 15px;
 }
 .page-options-button:hover {
-    background-color: var(--blue);
+    background-color: var(--accent-color-1);
 }
 
 /* job board */
@@ -73,11 +119,11 @@ body {
 
 /*  3 main column headers  */
 
-.main-column-header-style {
-    /* color: var(--white);
-    font-size: 2em; */
-    /* background-color: blue; */
-}
+/* .main-column-header-style {
+     color: var(--white);
+    font-size: 2em; 
+     background-color: blue; 
+}*/
 .main-column-header {
     color: var(--white);
     font-size: 2.5em;
@@ -88,26 +134,25 @@ body {
     border-radius: 10px;
 }
 .main-column-section:nth-child(odd) {
-background-color: var(--light-blue)
+background-color: var(--primary-color-1)
 
 }
 .main-column-section:nth-child(even) {
-background-color: var(--light-brown)
+background-color: var(--primary-color-3)
 
 }
 
 /*  6 sub column headers  */
 
 .sub-column-headers {
-    
-    
+ 
 }
 
 .sub-column-content-odd {
     margin-top: 5px;
     padding: 5px;
     text-align: center;
-    background-color: var(--blue);
+    background-color: var(--accent-color-1);
     color: var(--white);
     border-radius: 10px;
 }
@@ -115,8 +160,23 @@ background-color: var(--light-brown)
     margin-top: 5px;
     padding: 5px;
     text-align: center;
-    background-color: var(--dark-blue);
+    background-color: var(--primary-color-2);
     color: var(--white);
     border-radius: 10px;
 }
 
+
+
+.modal {
+    border-radius: 5px;
+    border: 1px solid var(--black);
+    background-color: var(--primary-color-2);
+    color: var(--white);
+}
+.modal input{
+    color: var(--white);
+}
+
+.modal form .modal-footer-button {
+    color: var(--black);
+}

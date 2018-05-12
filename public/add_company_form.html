@@ -16,19 +16,19 @@
             <div class="row">
                 <div class="input-field col s12">
                     <label for="companyName">Enter Company Name: (required) </label>
-                    <input id="companyName" type="text" name="company_name" value="" placeholder="" >
+                    <input id="companyName" type="text" name="company_name" value="" placeholder="" required>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <label for="positionTitle">Position Title: (required)</label>
-                    <input id="positionTitle" type="text" name="position_title" value="" placeholder="" >
+                    <input id="positionTitle" type="text" name="position_title" value="" placeholder="" required>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <label for="dateAdded">Date added to<span>The<span></span>Hunt</span> (mm/dd/yy): (required)</label>
-                    <input id="dateAdded" type="text" name="date_added" value="" placeholder="" >
+                    <input id="dateAdded" type="text" name="date_added" value="" placeholder="" required>
                 </div>
             </div>
             <div class="row">
@@ -45,8 +45,8 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <label for="hiringManagerPhone">Hiring Manager Phone: </label>
-                    <input id="hiringManagerPhone" type="text" name="hiring_manager_phone" value="" placeholder="" >
+                    <label for="hiringManagerPhone">Hiring Manager Phone (format: xxx-xxx-xxxx):  </label>
+                    <input id="hiringManagerPhone" type="tel" pattern="^\d{3}-\d{3}-\d{4}$" name="hiring_manager_phone" value="" placeholder="" >
                 </div>
             </div>
             <div class="row">

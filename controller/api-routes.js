@@ -18,8 +18,11 @@ module.exports = function (app) {
         db.Company.findAll({})
             .then(function (company_data) {
                 console.log(company_data);
-                return res.render('index', { company_data })
-            })
+                var companyInfo = {
+                    companies: company_data
+                };
+                return res.render('index', companyInfo)
+            });
         //============================
         
     });
@@ -37,11 +40,12 @@ module.exports = function (app) {
         });
     });
     // api route updates a company in the database
-    app.put("/api/companies", function (req, res) {
-        db.Company.update(req.body,
+    app.put("/api/companies/:id", function (req, res) {
+        db.Company.update(
+            req.body,
             {
                 where: {
-                    id: req.body.id
+                    id: req.params.id
                 }
             })
             .then(function (the_hunt_db) {
