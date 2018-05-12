@@ -16,6 +16,7 @@ $(document).ready(function () {
         console.log(1);
         
         $('#confirmDelete').modal('open');
+
     });
 
 
@@ -135,8 +136,6 @@ $(document).ready(function () {
             else {
                 // initializeRows(); // uses db data for companies to generate rows
                 // handlebars.js helper alterations
-
-                
             }
         });
     }
@@ -179,7 +178,7 @@ $(document).ready(function () {
             }
         });
     }
-    // check if the inpyt
+    // check if the input object has any null sections and replace them
     function checkIfDataNull(data) {
         var companyData = {
             companyName: "",
@@ -193,31 +192,31 @@ $(document).ready(function () {
             boardPosition: "",
         }
 
-        if (data.company_name !== null || data.company_name !== undefined) {
+        if (data.company_name !== null) {
             companyData.companyName = data.company_name;
         }
-        if (data.position_title !== null || data.position_title !== undefined) {
+        if (data.position_title !== null) {
             companyData.positionTitle = data.position_title
         }
-        if (data.date_added !== null || data.date_added !== undefined) {
+        if (data.date_added !== null) {
             companyData.dateAdded = data.date_added;
         }
-        if (data.website_url !== null || data.website_url !== undefined) {
+        if (data.website_url !== null) {
             companyData.websiteURL = data.website_url;
         }
-        if (data.hiring_manager_name !== null || data.hiring_manager_name !== undefined) {
+        if (data.hiring_manager_name !== null) {
             companyData.hiringManagerName = data.hiring_manager_name;
         }
-        if (data.hiring_manager_phone !== null || data.hiring_manager_phone !== undefined) {
+        if (data.hiring_manager_phone !== null) {
             companyData.hiringManagerPhone = data.hiring_manager_phone;
         }
-        if (data.hiring_manager_email !== null || data.hiring_manager_email !== undefined) {
+        if (data.hiring_manager_email !== null) {
             companyData.hiringManagerEmail = data.hiring_manager_email;
         }
-        if (data.company_notes !== null || data.company_notes !== undefined) {
+        if (data.company_notes !== null) {
             companyData.companyNotes = data.company_notes;
         }
-        if (data.board_position !== null || data.board_position !== undefined) {
+        if (data.board_position !== null) {
             companyData.boardPosition = data.board_position;
         }
     
@@ -243,9 +242,5 @@ $(document).ready(function () {
                 window.location.href = "/";
             });
     }
-
-
-
-
 
 });
