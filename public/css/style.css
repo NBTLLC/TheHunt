@@ -23,8 +23,8 @@ font-family: 'Great Vibes', cursive; */
   --black: #00000F;
   --background: #00000F;
 } */
-/* palette 2 */
-/* :root {
+/* palette 2
+:root {
   --primary-color-1:#41B3A3;
   --accent-color-1:#C38D93;
   --primary-color-2:#254E58;
@@ -73,6 +73,11 @@ body {
     box-sizing: border-box;
     /* font-family: 'Roboto', sans-serif; */
     font-family: 'Open Sans', sans-serif;
+}
+
+textarea {
+    max-width: 100%;
+    min-width: 100%;
 }
 
 /* Title styles */
