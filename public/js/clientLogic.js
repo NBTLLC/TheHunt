@@ -15,7 +15,7 @@ $(document).ready(function () {
     $('#deleteButtonConfirmation').on("click", function() {
         console.log(1);
         
-        $('#confirmDelete').modal('open');
+        $('#confirmDelete').leanmodal('open');
     });
 
 
