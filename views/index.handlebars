@@ -5,7 +5,7 @@
     <div class="navbar" id="top">
         <div class="row valign-wrapper center-align">
             <div class="col s1">
-                <a class="btn modal-trigger btn-floating btn-large waves-effect waves-light add-company-button" data-target="modal1" href="#modal1">
+                <a class="btn modal-trigger btn-floating btn-large waves-effect waves-light add-company-button" data-target="#companyInputModal" id="inputModalTrigger">
                     <i class="material-icons">add</i>
                 </a>
             </div>
@@ -37,22 +37,18 @@
                     <div class="col s6">
                         <div class="col-content sub-column-content-odd">
                             <h5>Interested</h5>
-                            {{!-- <div id="interestedCompanies"></div> --}}
-                            {{#each companies}}
-                                {{#if rejected}}
-                                     {{> companies/company-block}}
-                                {{/if}}
-                            {{/each}}
                         </div> 
+                         {{> companies/company-block}}
                     </div>
                     <div class="col s6">
                         <div class="col-content sub-column-content-even">
                             <h5>Applied</h5>
                             {{!-- <div id="appliedCompanies"></div> --}}
                              {{#each companies}} 
-                                {{#if applied}} 
-                                    {{> companies/company-block}} 
-                                {{/if}} 
+                                {{#if isApplied}}
+                                    <p>test</p> 
+                                     {{> companies/company-block}}
+                                {{/if}}
                              {{/each}}
                             
                         </div> 
@@ -67,7 +63,8 @@
                             <h5>Phone</h5>
                             {{!-- <div id="phoneCompanies"></div> --}}
                             {{#each companies}}
-                                {{#if phone}}
+                                {{#if isPhone}}
+                                    <p>test</p> 
                                      {{> companies/company-block}}
                                 {{/if}}
                             {{/each}}
@@ -79,7 +76,8 @@
                             <h5>In-Person</h5>
                             {{!-- <div id="inPersonCompanies"></div> --}}
                             {{#each companies}}
-                                {{#if in}}
+                                {{#if isInPerson}}
+                                    <p>test</p> 
                                      {{> companies/company-block}}
                                 {{/if}}
                             {{/each}}
@@ -96,10 +94,11 @@
                                 <h5>Offer</h5>
                                 {{!-- <div id="offerCompanies"></div> --}}
                                 {{#each companies}}
-                                {{#if rejected}}
+                                {{#if isOffer}}
+                                    <p>test</p> 
                                      {{> companies/company-block}}
                                 {{/if}}
-                            {{/each}}
+                                {{/each}}
                                 
                             </div>
                         </div>
@@ -108,10 +107,11 @@
                                 <h5>Rejected</h5>
                                 {{!-- <div id="rejectedCompanies"> --}}
                                  {{#each companies}}
-                                {{#if rejected}}
-                                     {{> companies/company-block}}
-                                {{/if}}
-                            {{/each}}   
+                                    {{#if isRejected}}
+                                        <p>test</p> 
+                                         {{> companies/company-block}}
+                                    {{/if}}
+                                 {{/each}}   
 
                                 </div>
                                 
@@ -123,7 +123,7 @@
 </div>
 
     </div>
-    <main>
+    {{!-- <main>
 
         <ul id="handleBarsHTML">
             <!-- example of s -->
@@ -141,18 +141,101 @@
             </ul>
         </ul>
 
-    </main>
+    </main> --}}
 
 </div>
 
 {{!--  add a company modal --}}
 
-<div id="modal1" class="modal">
+<div id="companyInputModal" class="modal">
     <div class="modal-content">
-        <h4>Modal Header</h4>
-        <p>A bunch of text</p>
+        <div class="container">
+            <div class="row">
+                <form class="col s12" action="/api/add_company" method="post" id="newCompanyForm">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="companyName">Enter Company Name: (required) </label>
+                            <input id="companyName" type="text" name="company_name" value="" placeholder="" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="positionTitle">Position Title: (required)</label>
+                            <input id="positionTitle" type="text" name="position_title" value="" placeholder="" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="dateAdded">Date added to
+                                <span>The
+                                    <span></span>Hunt</span> (mm/dd/yyyy): (required)</label>
+                            <input id="dateAdded" type="text" pattern="\d{1,2}/\d{1,2}/\d{4}" name="date_added" value="" placeholder="" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="websiteURL">Website URL: </label>
+                            <input id="websiteURL" type="url" name="website_url" value="" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="hiringManagerName">Hiring Manager Name: </label>
+                            <input id="hiringManagerName" type="text" name="hiring_manager_name" value="" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="hiringManagerPhone">Hiring Manager Phone (format: xxx-xxx-xxxx): </label>
+                            <input id="hiringManagerPhone" type="tel" pattern="^\d{3}-\d{3}-\d{4}$" name="hiring_manager_phone" value="" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="hiringManagerEmail">Hiring Manager Email: </label>
+                            <input id="hiringManagerEmail" type="email" name="hiring_manager_email" value="" placeholder="">
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <label for="companyNotes">Notes:</label>
+                                <textarea name="company_notes" placeholder="This area is for general notes about the company and for the interview" class=""
+                                    rows="10" id="companyNotes"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select id="boardPosition" name="board_position"required>
+                                    <option value="" disabled selected>Select your current status of this company (Required)</option>
+                                    <option value="Interested">Interested</option>
+                                    <option value="Applied">Applied</option>
+                                    <option value="Phone">Phone</option>
+                                    <option value="Technical">Technical</option>
+                                    <option value="Offer">Offer</option>
+                                    <option value="Rejected">Rejected</option>
+                                </select>
+                                <label>Materialize Select</label>
+                            </div>
+                        </div>
+                        <input type="submit" value="OK" class="modal-footer-button">
+                        <input type="button" value="Delete" class="modal-footer-button" data-target="#confirmDelete" id="#deleteButtonConfirmation" >
+                </form>
+                </div>
+        
+            </div>
+
+    </div>
+</div>
+
+{{!--  confirm company delete --}}
+
+
+
+<div id="confirmDelete" class="modal">
+    <div class="modal-content">
+        <h4>Are you sure you would like to delete this company?</h4>
     </div>
     <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">YES</a>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat red">NO</a>
     </div>
 </div>
