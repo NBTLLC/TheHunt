@@ -69,7 +69,16 @@ font-family: 'Great Vibes', cursive; */
 } 
 
 body {
-    background-color: var(--background);
+    /* background-color: var(--background); */
+
+    /* possible geometric backgrounds */
+    /* black geometric 1 */
+    /* background-image: url(http://ak5.picdn.net/shutterstock/videos/10747775/thumb/1.jpg); */
+    /* black geometric 2 */
+    background-image: url(http://papers.co/wallpaper/papers.co-vj27-low-poly-art-dark-pattern-25-wallpaper.jpg);
+    /* black geometric 3 */
+    /* background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/04/11/71/89581ac0e491778.jpg); */
+    background-size: cover;
     box-sizing: border-box;
     /* font-family: 'Roboto', sans-serif; */
     font-family: 'Open Sans', sans-serif;
@@ -78,16 +87,22 @@ body {
 textarea {
     max-width: 100%;
     min-width: 100%;
+    min-height: 100px;
+    background-color: var(--white);
 }
 
 /* Title styles */
 
 .fancy-title {
     font-family: 'Great Vibes', cursive;
+    font-size: 2em;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 
 .serious-title {
     font-family: 'Anton', sans-serif;
+    font-size: 1.4em;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 
 /* NavBar */

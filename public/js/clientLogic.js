@@ -289,8 +289,10 @@ $("#deleteCompany").on("click", function(){
 
     // modal triggers
     $('#inputModalTrigger').on("click", function() {
-        
+        $('#newCompanyForm')[0].reset();
         $('#companyInputModal').modal('open');
+        
+        
     });
 
     $('#deleteButtonConfirmation').on("click", function() {
@@ -300,7 +302,6 @@ $("#deleteCompany").on("click", function(){
         $('#confirmDelete').modal('open');
 
     });
-
 
 
 
@@ -356,7 +357,6 @@ $("#deleteCompany").on("click", function(){
     var companyNameInput = $("#companyName");
     var positionTitleInput = $("#positionTitle");
     var dateAddedInput = $("#dateAdded");
-    var websiteURLInput = $("#websiteURL");
     var websiteURLInput = $("#websiteURL");
     var hiringManagerNameInput = $("#hiringManagerName");
     var hiringManagerPhoneInput = $("#hiringManagerPhone");
