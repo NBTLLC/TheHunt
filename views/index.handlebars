@@ -1,221 +1,220 @@
-{{!-- body of the main page for The Hunt Website --}}
-
-{{!-- navbar and title --}}
+{{!-- body of the main page for The Hunt Website --}} {{!-- navbar and title --}}
 <div class="body-container">
-    <div class="navbar" id="top">
-        <div class="row valign-wrapper center-align">
-            <div class="col s1">
-                <a class="btn modal-trigger btn-floating btn-large waves-effect waves-light add-company-button" data-target="#companyInputModal" id="inputModalTrigger">
-                    <i class="material-icons">add</i>
-                </a>
-            </div>
-            <h1 class="col s10 "><span class="fancy-title">The</span> <span class="serious-title">Hunt</span></h1>
-            <div class="col s1">
-                <a class="btn-floating btn-large waves-effect waves-light page-options-button">
-                    <i class="material-icons">dehaze</i>
-                </a>
-            </div>
-        </div>
-    </div>
+	<div class="navbar" id="top">
+		<div class="row valign-wrapper center-align">
+			<div class="col s1">
+				<a class="btn modal-trigger btn-floating btn-large waves-effect waves-light add-company-button" data-target="#companyInputModal"
+				 id="inputModalTrigger">
+					<i class="material-icons">add</i>
+				</a>
+			</div>
+			<h1 class="col s10 ">
+				<span class="fancy-title">The</span>
+				<span class="serious-title">Hunt</span>
+			</h1>
+			<div class="col s1">
+				<a class="btn-floating btn-large waves-effect waves-light page-options-button">
+					<i class="material-icons">dehaze</i>
+				</a>
+			</div>
+		</div>
+	</div>
 
-{{!-- main trello board section --}}
-<div class="board-container">
-    {{!-- main headings --}}
-    <div class="main-column-header-style" id="background">
-        <div class="row">
-            <div class="col s4 center main-column-header">Think</div>
-            <div class="col s4 center main-column-header">Plan</div>
-            <div class="col s4 center main-column-header">Execute</div>  
-        </div>
-    </div>
-       
-    {{!-- sub headings --}}
-    <div class="sub-column-headers" id="headers">
-        <div class="row">
-            <div class="col s4 main-column-section" id="column 1">
-                <div class="row">
-                    <div class="col s6">
-                        <div class="col-content sub-column-content-odd">
-                            <h5>Interested</h5>
-                        </div> 
-                         {{> companies/company-block}}
-                    </div>
-                    <div class="col s6">
-                        <div class="col-content sub-column-content-even">
-                            <h5>Applied</h5>
-                            {{!-- <div id="appliedCompanies"></div> --}}
-                             {{#each companies}} 
-                                {{#if isApplied}}
-                                    <p>test</p> 
-                                     {{> companies/company-block}}
-                                {{/if}}
-                             {{/each}}
-                            
-                        </div> 
-                    </div>
-                </div>
-                
-            </div>
-            <div class="col s4 main-column-section" id="column 2">
-                <div class="row">
-                    <div class="col s6">
-                        <div class="col-content sub-column-content-odd">
-                            <h5>Phone</h5>
-                            {{!-- <div id="phoneCompanies"></div> --}}
-                            {{#each companies}}
-                                {{#if isPhone}}
-                                    <p>test</p> 
-                                     {{> companies/company-block}}
-                                {{/if}}
-                            {{/each}}
-                            
-                        </div>
-                    </div>
-                    <div class="col s6">
-                        <div class="col-content sub-column-content-even">
-                            <h5>In-Person</h5>
-                            {{!-- <div id="inPersonCompanies"></div> --}}
-                            {{#each companies}}
-                                {{#if isInPerson}}
-                                    <p>test</p> 
-                                     {{> companies/company-block}}
-                                {{/if}}
-                            {{/each}}
-                            
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="col s4 main-column-section" id="column 3">
-                <div class="row">
-                        <div class="col s6">
-                            <div class="col-content sub-column-content-odd">
-                                <h5>Offer</h5>
-                                {{!-- <div id="offerCompanies"></div> --}}
-                                {{#each companies}}
-                                {{#if isOffer}}
-                                    <p>test</p> 
-                                     {{> companies/company-block}}
-                                {{/if}}
-                                {{/each}}
-                                
-                            </div>
-                        </div>
-                        <div class="col s6">
-                            <div class="col-content sub-column-content-even">
-                                <h5>Rejected</h5>
-                                {{!-- <div id="rejectedCompanies"> --}}
-                                 {{#each companies}}
-                                    {{#if isRejected}}
-                                        <p>test</p> 
-                                         {{> companies/company-block}}
-                                    {{/if}}
-                                 {{/each}}   
+	{{!-- main trello board section --}}
+	<div class="board-container">
+		{{!-- main headings --}}
+		<div class="main-column-header-style" id="background">
+			<div class="row">
+				<div class="col s4 center main-column-header">Think</div>
+				<div class="col s4 center main-column-header">Plan</div>
+				<div class="col s4 center main-column-header">Execute</div>
+			</div>
+		</div>
 
-                                </div>
-                                
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
+		{{!-- sub headings --}}
+		<div class="sub-column-headers" id="headers">
+			<div class="row">
+				<div class="col s4 main-column-section" id="column 1">
+					<div class="row">
+						<div class="col s6">
+							<div class="col-content sub-column-content-odd">
+								<h5>Interested</h5>
+							</div>
+							<div class="dragDrop" ondrop="drop(event)" ondragover="allowDrop(event)" id="Interested" data-board-position="Interested">
+								{{> companies/company-block-interested}}
+							</div>
+						</div>
+						<div class="col s6">
+							<div class="col-content sub-column-content-even">
+								<h5>Applied</h5>
+							</div>
+							<div class="dragDrop" ondrop="drop(event)" ondragover="allowDrop(event)" id="Applied" data-board-position="Applied">
+								{{> companies/company-block-applied}}
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+				<div class="col s4 main-column-section" id="column 2">
+					<div class="row">
+						<div class="col s6">
+							<div class="col-content sub-column-content-odd">
+								<h5>Phone</h5>
+							</div>
+							<div class="dragDrop" ondrop="drop(event)" ondragover="allowDrop(event)" id="Phone" data-board-position="Phone">
+								{{> companies/company-block-phone}}
+							</div>
+						</div>
+						<div class="col s6">
+							<div class="col-content sub-column-content-even">
+								<h5>In Person</h5>
+							</div>
+							<div class="dragDrop" ondrop="drop(event)" ondragover="allowDrop(event)" id="inPerson" data-board-position="inPerson">
+								{{> companies/company-block-inPerson}}
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="col s4 main-column-section" id="column 3">
+					<div class="row">
+						<div class="col s6">
+							<div class="col-content sub-column-content-odd">
+								<h5>Offer</h5>
+							</div>
+							<div class="dragDrop" ondrop="drop(event)" ondragover="allowDrop(event)" id="Offer" data-board-position="Offer">
+								{{> companies/company-block-offer}}
+							</div>
+						</div>
+						<div class="col s6">
+							<div class="col-content sub-column-content-even">
+								<h5>Rejected</h5>
+							</div>
+							<div class="dragDrop" ondrop="drop(event)" ondragover="allowDrop(event)" id="Rejected" data-board-position="Rejected">
+								{{> companies/company-block-rejected}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	{{!--
+	<main>
+
+		<ul id="handleBarsHTML">
+			<!-- example of s -->
+			<ul>
+				{{#each jobs}}
+				<li>
+					<p>
+						<span class="label">ID:</span> {{this.id}}</p>
+					<p>
+						<span class="label">Company Name:</span> {{this.companyNamp}}</p>
+					<p>
+						<span class="label">Hiring Manager:</span> {{this.hiringManager}}</p>
+				</li>
+				{{/each}}
+			</ul>
+		</ul>
+
+	</main> --}}
+
 </div>
 
-    </div>
-</div>
-
-{{!--  add a company modal --}}
+{{!-- add a company modal --}}
 
 <div id="companyInputModal" class="modal">
-    <div class="modal-content">
-        <div class="container">
-            <div class="row">
-                <form class="col s12" action="/api/add_company" method="post" id="newCompanyForm">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <label for="companyName">Enter Company Name: (required) </label>
-                            <input id="companyName" type="text" name="company_name" value="" placeholder="" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <label for="positionTitle">Position Title: (required)</label>
-                            <input id="positionTitle" type="text" name="position_title" value="" placeholder="" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <label for="dateAdded">Date added to
-                                <span>The
-                                    <span></span>Hunt</span> (mm/dd/yyyy): (required)</label>
-                            <input id="dateAdded" type="text" pattern="\d{1,2}/\d{1,2}/\d{4}" name="date_added" value="" placeholder="" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <label for="websiteURL">Website URL: </label>
-                            <input id="websiteURL" type="url" name="website_url" value="" placeholder="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <label for="hiringManagerName">Hiring Manager Name: </label>
-                            <input id="hiringManagerName" type="text" name="hiring_manager_name" value="" placeholder="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <label for="hiringManagerPhone">Hiring Manager Phone (format: xxx-xxx-xxxx): </label>
-                            <input id="hiringManagerPhone" type="tel" pattern="^\d{3}-\d{3}-\d{4}$" name="hiring_manager_phone" value="" placeholder="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <label for="hiringManagerEmail">Hiring Manager Email: </label>
-                            <input id="hiringManagerEmail" type="email" name="hiring_manager_email" value="" placeholder="">
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <label for="companyNotes">Notes:</label>
-                                <textarea name="company_notes" cols="10" rows="5" charswidth="23" placeholder="" class=""
-                                    rows="10" id="companyNotes"></textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <select id="boardPosition" name="board_position"required>
-                                    <option value="" disabled selected>Select your current status of this company (Required)</option>
-                                    <option value="Interested">Interested</option>
-                                    <option value="Applied">Applied</option>
-                                    <option value="Phone">Phone</option>
-                                    <option value="Technical">Technical</option>
-                                    <option value="Offer">Offer</option>
-                                    <option value="Rejected">Rejected</option>
-                                </select>
-                                <label>Materialize Select</label>
-                            </div>
-                        </div>
-                        <input type="submit" value="OK" class="waves-effect waves-light btns">
-                        
-                </form>
-                </div>
-        
-            </div>
+	<div class="modal-content">
+		<div class="container">
+			<div class="row">
+				<form class="col s12" action="/api/add_company" method="post" id="newCompanyForm">
+					<div class="row">
+						<div class="input-field col s12">
+							<label for="companyName">Enter Company Name: (required) </label>
+							<input id="companyName" type="text" name="company_name" value="" placeholder="" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<label for="positionTitle">Position Title: (required)</label>
+							<input id="positionTitle" type="text" name="position_title" value="" placeholder="" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<label for="dateAdded">Date added to
+								<span>The
+									<span></span>Hunt</span> (mm/dd/yyyy): (required)</label>
+							<input id="dateAdded" type="text" pattern="\d{1,2}/\d{1,2}/\d{4}" name="date_added" value="" placeholder="" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<label for="websiteURL">Website URL: </label>
+							<input id="websiteURL" type="url" name="website_url" value="" placeholder="">
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<label for="hiringManagerName">Hiring Manager Name: </label>
+							<input id="hiringManagerName" type="text" name="hiring_manager_name" value="" placeholder="">
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<label for="hiringManagerPhone">Hiring Manager Phone (format: xxx-xxx-xxxx): </label>
+							<input id="hiringManagerPhone" type="tel" pattern="^\d{3}-\d{3}-\d{4}$" name="hiring_manager_phone" value="" placeholder="">
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<label for="hiringManagerEmail">Hiring Manager Email: </label>
+							<input id="hiringManagerEmail" type="email" name="hiring_manager_email" value="" placeholder="">
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<label for="companyNotes">Notes:</label>
+								<textarea name="company_notes" placeholder="This area is for general notes about the company and for the interview" class=""
+								 rows="10" id="companyNotes"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<select id="boardPosition" name="board_position" required>
+									<option value="" disabled selected>Select your current status of this company (Required)</option>
+									<option value="Interested">Interested</option>
+									<option value="Applied">Applied</option>
+									<option value="Phone">Phone</option>
+									<option value="inPerson">In Person</option>
+									<option value="Offer">Offer</option>
+									<option value="Rejected">Rejected</option>
+								</select>
+								<label>Materialize Select</label>
+							</div>
+						</div>
+						<input type="submit" value="OK" class="waves-effect waves-light btns">
+				</form>
+				</div>
 
-    </div>
-</div>
+			</div>
 
-{{!--  confirm company delete --}}
+		</div>
+	</div>
 
+	{{!-- confirm company delete --}}
 
 
-<div id="confirmDelete" class="modal">
-    <div class="modal-content">
-        <h4>Are you sure you would like to delete this company?</h4>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="deleteCompany">YES</a>
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat red" id="doNotDeleteCompany">NO</a>
-    </div>
-</div>
+
+	<div id="confirmDelete" class="modal">
+		<div class="modal-content">
+			<h4>Are you sure you would like to delete this company?</h4>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat" id="deleteConfirm">YES</a>
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat red" id="deleteDeny">NO</a>
+		</div>
+	</div>
+

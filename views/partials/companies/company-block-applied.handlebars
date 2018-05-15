@@ -1,0 +1,16 @@
+{{#each companies}}
+{{#ifEquals board_position "Applied"}} 
+
+
+	<div class="sub-column-content-odd" data-group="company" id="{{id}}" draggable="true" ondragstart="drag(event)">
+		<div data-group="edit" class="material-icons small edit">edit</div>
+		<div data-group="clear" class="material-icons small clear">clear</div>
+		<p>{{company_name}}</p>
+		<p>{{position_title}}</p>
+		<p>{{date_added}}</p>
+
+</div>
+{{/ifEquals}}
+
+
+{{/each}}

@@ -52,6 +52,21 @@ module.exports = function (app) {
                 res.json(the_hunt_db);
             });
     });
+    // api route updates a company's board position in the db
+    app.put("/api/companies/:board/:id", function (req, res) {
+        db.Company.update(
+            {
+                board_position: req.params.board
+            },
+            {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(function (the_hunt_db) {
+                res.json(the_hunt_db);
+            });
+    });
     // api route for retrieving a single company's information
     app.get("/api/companies/:id", function (req, res) {
         db.Company.findOne({
