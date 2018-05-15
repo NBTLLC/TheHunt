@@ -6,10 +6,11 @@ $(document).ready(function () {
 	// initializes materialize functionality
 	$('select').formSelect();
 	$('.modal').modal();
-
+	// var instance = M.Modal.getInstance(elem);
 	// modal triggers
 	$('#inputModalTrigger').on("click", function () {
-
+		$('#newCompanyForm')[0].reset();
+		$('#confirmDelete').modal('close');
 		$('#companyInputModal').modal('open');
 	});
 
@@ -65,6 +66,7 @@ $(document).ready(function () {
 		console.log(currentCompany);
 		getCompanyData(currentCompany);
 		// window.location.href = "/?company_id=" + currentCompany;
+		$('#confirmDelete').modal('close');
 		$('#companyInputModal').modal('open');
 		console.log(updating);
 
@@ -78,7 +80,10 @@ $(document).ready(function () {
 		idToDelete = $(this).parent().attr("id");
 		console.log(idToDelete);
 		$('#companyInputModal').modal('open');
+		
 		$('#confirmDelete').modal('open');
+		// $('#companyInputModa').modal({ dismissible: false });
+		
 
 	}
 
