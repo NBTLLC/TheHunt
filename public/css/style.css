@@ -12,51 +12,7 @@ font-family: 'Great Vibes', cursive; */
 
 /* To reference in css use syntax ->  var(--whatever-the-root-colorname-is)*/
 
-/* original color palette */
-/* :root {
-  --primary-color-1:#88BDBC;
-  --accent-color-1:#254E58;
-  --primary-color-2:#112D32;
-  --accent-color-2:#4F4A41;
-  --primary-color-3:#6E6658;
-  --white: #FFFFFF; 
-  --black: #00000F;
-  --background: #00000F;
-} */
-/* palette 2 */
-/* :root {
-  --primary-color-1:#41B3A3;
-  --accent-color-1:#C38D93;
-  --primary-color-2:#254E58;
-  --accent-color-2:#85DCB;
-  --primary-color-3:#E8A87C;
-  --white: #FFFFFF; 
-  --black: #00000F;
-  --background: #C38D93;
-} */
-/* palette 3 */
-/* :root {
-  --primary-color-1:#2F2FA2;
-  --accent-color-1:#F64C72;
-  --primary-color-2:#553D67;
-  --accent-color-2:#99738E;
-  --primary-color-3:#242582;
-  --white: #FFFFFF; 
-  --black: #00000F;
-  --background: #99738E;
-}  */
-/* palette 4 */
-/* :root {
-  --primary-color-1:#3500D3;
-  --accent-color-1:#240090;
-  --primary-color-2:#190061;
-  --accent-color-2:#0C0032;
-  --primary-color-3:#28288;
-  --white: #FFFFFF; 
-  --black: #00000F;
-  --background: #00000F;
-}  */
- /* palette 5 */
+
 :root {
   --primary-color-1:#C3073F;
   --accent-color-1:#950740;
@@ -66,9 +22,12 @@ font-family: 'Great Vibes', cursive; */
   --white: #FFFFFF; 
   --black: #00000F;
   --background: #00000F;
-  --lighter-red: #d1675a;
-  --light-orange: #ffbf6b;
-  --blue: #398eb2;
+  --medium-purple: #779ED2;
+  --fire-brick: #A13D1E;
+  --rosy-brown: #BBAA90;
+  --dark-slate-blue: #36466C;
+  --steel-blue: #5170A2;
+
 } 
 
 body {
@@ -78,13 +37,30 @@ body {
     /* black geometric 1 */
     /* background-image: url(http://ak5.picdn.net/shutterstock/videos/10747775/thumb/1.jpg); */
     /* black geometric 2 */
-    background-image: url(http://papers.co/wallpaper/papers.co-vj27-low-poly-art-dark-pattern-25-wallpaper.jpg);
+    /* background-image: url(http://papers.co/wallpaper/papers.co-vj27-low-poly-art-dark-pattern-25-wallpaper.jpg); */
     /* black geometric 3 */
     /* background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/04/11/71/89581ac0e491778.jpg); */
+    /* background-image: url(https://images.unsplash.com/photo-1520588498176-b032d1e70b74?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a4704ad05be721ec7f384f9656b6285a&auto=format&fit=crop&w=1086&q=80); */
+    background-image: url(https://images.unsplash.com/photo-1486607303850-bc051a4ffad4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e653d397d2d335009978a8573613ce1d&auto=format&fit=crop&w=1953&q=80);
+    /* background: #EF3B36;  fallback for old browsers */
+    /* background: -webkit-linear-gradient(to top, #FFFFFF, #EF3B36);  Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to bottom, #FFFFFF, #EF3B36); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    background-repeat: no-repeat;
     background-size: cover;
     box-sizing: border-box;
     /* font-family: 'Roboto', sans-serif; */
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+    /* background: linear-gradient(230deg, #a24bcf, #4b79cf, #4bc5cf); */
+    /* background: linear-gradient(230deg, rgba(226, 0, 72, 0.55),  rgba(6, 121, 159, 0.556), rgba(255, 132, 0, 0.516), rgba(106, 228, 0, 0.557)); */
+    /* background-size: 300% 300%; */
+    /* -webkit-animation: AnimationName 20s ease infinite; */
+    /* -moz-animation: AnimationName 20s ease infinite; */
+    /* -o-animation: AnimationName 20s ease infinite; */
+    /* animation: AnimationName 20s ease infinite; */
+
+
 }
 
 textarea {
@@ -92,7 +68,7 @@ textarea {
     min-width: 100%;
     min-height: 100px;
     background-color: var(--white);
-}
+} 
 
 /* Title styles */
 
@@ -111,26 +87,28 @@ textarea {
 /* NavBar */
 
 .navbar {
-    background-color: var(--primary-color-1);
+    /* background-color: var(--primary-color-1); */
+    background-color: var(--white);
+    box-shadow: 0px 10px 19px 0px rgba(0,0,0,0.57);
 }
 
 .add-company-button {
-    background-color: var(--primary-color-2);
+    background-color: var(--black);
     color: var(--white);
     font-family: 'Anton', sans-serif;
     padding: 0 15px;
 }
 .add-company-button:hover {
-   background-color: var(--accent-color-1);
+   background-color: var(--primary-color-3);
 }
 .page-options-button {
-    background-color: var(--primary-color-2);
+    background-color: var(--black);
     color: var(--white);
     font-family: 'Anton', sans-serif;
     padding: 0 15px;
 }
 .page-options-button:hover {
-    background-color: var(--accent-color-1);
+    background-color: var(--primary-color-3);
 }
 
 /* job board */
@@ -150,6 +128,9 @@ textarea {
 .main-column-header {
     color: var(--white);
     font-size: 2.5em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
     /* background-color: blue; */
 }
 
@@ -158,11 +139,11 @@ textarea {
     /* background-color: var(--lighter-red); */
 }
 .main-column-section:nth-child(odd) {
-background-color: var(--primary-color-1)
+/* background-color: var(--primary-color-1) */
 
 }
 .main-column-section:nth-child(even) {
-background-color: var(--primary-color-3)
+/* background-color: var(--primary-color-3) */
 
 }
 
@@ -172,12 +153,22 @@ background-color: var(--primary-color-3)
  
 } */
 
+.sub-column-content {
+    margin-top: 5px;
+    padding: 5px;
+    text-align: center;
+    background-color: var(--dark-slate-blue);
+    color: var(--white);
+    border-radius: 10px;
+    box-shadow:7px 6px 5px 0px rgba(0,0,0,0.75);
+}
 .sub-column-content-odd {
     margin-top: 5px;
     padding: 5px;
     text-align: center;
-    background-color: var(--accent-color-1);
-    color: var(--white);
+
+    background-color: var(--white);
+    color: var(--black);
     border-radius: 10px;
     box-shadow:7px 6px 5px 0px rgba(0,0,0,0.75);
 }
@@ -220,18 +211,31 @@ background-color: var(--primary-color-3)
 	position: relative;
   top: 10px;
   left: -30%;
+  cursor: pointer;
 }
 .clear {
 	position: relative;
   top: 12px;
   right: -30%;
+  cursor: pointer;
+}
+
+#deleteConfirm{
+    background-color: red;
+    color: var(--white);
+}
+
+#deleteDeny {
+      background-color: grey;
+    color: var(--white);
 }
 
 .modal {
     border-radius: 5px;
     border: 1px solid var(--black);
-    background-color: var(--primary-color-2);
+    background-color: var(--dark-slate-blue);
     color: var(--white);
+    font-size: 1.12rem;
 }
 .modal input{
     color: var(--white);
@@ -245,3 +249,17 @@ background-color: var(--primary-color-3)
     color: var(--white);
     font-size: 1.1rem;
 }
+
+form .waves-input-wrapper{
+    width: 100%;
+}
+
+.waves-effect input[type='submit'] {
+    border: 2px solid var(--white);
+    border-radius: 5px;
+    width: 100%;
+}
+.waves-effect input[type='submit']:hover {
+  cursor:  pointer;
+}
+
