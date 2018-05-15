@@ -23,8 +23,8 @@ font-family: 'Great Vibes', cursive; */
   --black: #00000F;
   --background: #00000F;
 } */
-/* palette 2
-:root {
+/* palette 2 */
+/* :root {
   --primary-color-1:#41B3A3;
   --accent-color-1:#C38D93;
   --primary-color-2:#254E58;
@@ -56,16 +56,19 @@ font-family: 'Great Vibes', cursive; */
   --black: #00000F;
   --background: #00000F;
 }  */
-/* palette 5 */
+ /* palette 5 */
 :root {
   --primary-color-1:#C3073F;
   --accent-color-1:#950740;
   --primary-color-2:#6F2232;
   --accent-color-2:#0C0032;
-  --primary-color-3:#4E4E50;
+  --primary-color-3:rgb(89, 89, 91);
   --white: #FFFFFF; 
   --black: #00000F;
   --background: #00000F;
+  --lighter-red: #d1675a;
+  --light-orange: #ffbf6b;
+  --blue: #398eb2;
 } 
 
 body {
@@ -152,6 +155,7 @@ textarea {
 
 .main-column-section {
     border-radius: 10px;
+    /* background-color: var(--lighter-red); */
 }
 .main-column-section:nth-child(odd) {
 background-color: var(--primary-color-1)
@@ -175,6 +179,7 @@ background-color: var(--primary-color-3)
     background-color: var(--accent-color-1);
     color: var(--white);
     border-radius: 10px;
+    box-shadow:7px 6px 5px 0px rgba(0,0,0,0.75);
 }
 .sub-column-content-even {
     margin-top: 5px;
@@ -183,17 +188,43 @@ background-color: var(--primary-color-3)
     background-color: var(--primary-color-2);
     color: var(--white);
     border-radius: 10px;
+    box-shadow:7px 6px 5px 0px rgba(0,0,0,0.75);
 }
+
+.sub-column-content-empty {
+	margin-top: 0px;
+	padding: 0px;
+	height: 135px;
+	text-align: center;
+	/* background-color: var(--primary-color-3); */
+	color: var(--white);
+	border-radius: 10px;
+}
+/* .sub-column-content-empty:hover {
+	margin-top: 0px;
+	padding: 0px;
+	height: 135px;
+	text-align: center;
+	background-color: var(--primary-color-3);
+	color: var(--white);
+	border-radius: 10px;
+} */
+
+.dragDrop {
+	min-height: 200px;
+	padding-bottom: 135px;
+}
+
 
 .edit {
 	position: relative;
   top: 10px;
-  left: -70px;
+  left: -30%;
 }
 .clear {
 	position: relative;
   top: 12px;
-  right: -70px;
+  right: -30%;
 }
 
 .modal {
@@ -208,4 +239,9 @@ background-color: var(--primary-color-3)
 
 .modal form .modal-footer-button {
     color: var(--black);
+}
+
+.input-field>label {
+    color: var(--white);
+    font-size: 1.1rem;
 }
