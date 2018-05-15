@@ -280,7 +280,7 @@ $("#deleteCompany").on("click", function(){
 				window.location.href = "/";
 			});
 	}
-=======
+
     // allows materialize form select dropdown and modal to work
     
     // initializes materialize functionality
