@@ -283,8 +283,6 @@ $("#deleteConfirm").on("click", function(){
 			});
 	}
 
-
-    ///////////////////////////////////////////////////////////////////////////////////////////
     // allows materialize form select dropdown and modal to work
     
     // initializes materialize functionality
