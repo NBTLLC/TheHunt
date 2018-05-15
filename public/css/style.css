@@ -149,9 +149,9 @@ background-color: var(--primary-color-3)
 
 /*  6 sub column headers  */
 
-.sub-column-headers {
+/* .sub-column-headers {
  
-}
+} */
 
 .sub-column-content-odd {
     margin-top: 5px;
@@ -170,7 +170,16 @@ background-color: var(--primary-color-3)
     border-radius: 10px;
 }
 
-
+.edit {
+	position: relative;
+  top: 10px;
+  left: -70px;
+}
+.clear {
+	position: relative;
+  top: 12px;
+  right: -70px;
+}
 
 .modal {
     border-radius: 5px;
