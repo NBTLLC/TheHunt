@@ -246,6 +246,27 @@ $(document).ready(function () {
 
 
 
-
-
 });
+
+// please dont break shit
+function allowDrop(ev) {
+	ev.preventDefault();
+}
+
+function drag(ev) {
+	ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+	ev.preventDefault();
+	if (ev.target.className === "dragDrop") {
+
+
+		var data = ev.dataTransfer.getData("text");
+		ev.target.prepend(document.getElementById(data));
+		ev.target.style.height = "120%";
+		console.log('ev.target.dataset', ev.target.dataset);
+		console.log(data);
+		//$.put('/api/companies/' + data);
+	}
+}

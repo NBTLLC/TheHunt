@@ -21,7 +21,8 @@ module.exports = function (app) {
                 var companyInfo = {
                     companies: company_data
                 };
-                return res.render('index', companyInfo)
+								return res.render('index', companyInfo)
+								console.log(companyInfo);
             });
         //============================
         

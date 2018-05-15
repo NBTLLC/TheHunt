@@ -149,23 +149,44 @@ background-color: var(--primary-color-3)
 }
 
 .sub-column-content-odd {
-    margin-top: 5px;
-    padding: 5px;
-    text-align: center;
-    background-color: var(--accent-color-1);
-    color: var(--white);
-    border-radius: 10px;
+  margin-top: 5px;
+  padding: 5px;
+  text-align: center;
+  background-color: var(--accent-color-1);
+  color: var(--white);
+  border-radius: 10px;
 }
 .sub-column-content-even {
-    margin-top: 5px;
-    padding: 5px;
-    text-align: center;
-    background-color: var(--primary-color-2);
-    color: var(--white);
-    border-radius: 10px;
+  margin-top: 5px;
+  padding: 5px;
+  text-align: center;
+  background-color: var(--primary-color-2);
+  color: var(--white);
+  border-radius: 10px;
 }
+.sub-column-content-empty {
+	margin-top: 0px;
+	padding: 0px;
+	height: 135px;
+	text-align: center;
+	/* background-color: var(--primary-color-3); */
+	color: var(--white);
+	border-radius: 10px;
+}
+/* .sub-column-content-empty:hover {
+	margin-top: 0px;
+	padding: 0px;
+	height: 135px;
+	text-align: center;
+	background-color: var(--primary-color-3);
+	color: var(--white);
+	border-radius: 10px;
+} */
 
-
+.dragDrop {
+	min-height: 200px;
+	padding-bottom: 135px;
+}
 
 .modal {
     border-radius: 5px;
