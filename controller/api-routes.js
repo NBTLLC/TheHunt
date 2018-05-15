@@ -63,5 +63,18 @@ module.exports = function (app) {
                 res.json(the_hunt_db);
             });
     });
-
+    // DELETE route for deleting a single company
+    app.delete("/api/companies/:id", function (req, res) {
+        // Use the sequelize destroy method to delete a record from our table with the
+        db.Company.destroy(
+            {
+                where: {
+                    id: req.params.id
+                }
+            }
+        )
+            .then(function (the_hunt_db) {
+                res.json(the_hunt_db);
+            })
+    });
 };
