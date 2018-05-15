@@ -1,0 +1,15 @@
+{{#each companies}}
+{{#ifEquals board_position "Rejected"}} 
+
+
+	<div class="sub-column-content-odd" data-group="company" id="{{id}}" draggable="true" ondragstart="drag(event)">
+
+		<p>{{company_name}}</p>
+		<p>{{position_title}}</p>
+		<p>{{date_added}}</p>
+
+</div>
+{{/ifEquals}}
+
+
+{{/each}}

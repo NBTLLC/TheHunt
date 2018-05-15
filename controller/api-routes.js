@@ -21,7 +21,8 @@ module.exports = function (app) {
                 var companyInfo = {
                     companies: company_data
                 };
-                return res.render('index', companyInfo)
+								return res.render('index', companyInfo)
+								console.log(companyInfo);
             });
         //============================
         
@@ -63,18 +64,5 @@ module.exports = function (app) {
                 res.json(the_hunt_db);
             });
     });
-    // DELETE route for deleting a single company
-    app.delete("/api/companies/:id", function (req, res) {
-        // Use the sequelize destroy method to delete a record from our table with the
-        db.Company.destroy(
-            {
-                where: {
-                    id: req.params.id
-                }
-            }
-        )
-            .then(function (the_hunt_db) {
-                res.json(the_hunt_db);
-            })
-    });
+
 };

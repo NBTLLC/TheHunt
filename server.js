@@ -11,7 +11,6 @@ var exphbs = require("express-handlebars");
 
 // Sets up the Express App
 // =============================================================
-var connection = require('./config/connection.js');
 var app = express();
 var PORT = process.env.PORT || 8020;
 
@@ -32,6 +31,11 @@ app.use(bodyParser.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+var hbs = require('handlebars');
+
+hbs.registerHelper('ifEquals', function(arg1, arg2, options) {
+	return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});
 
 // Static directory
 app.use(express.static("public"));
