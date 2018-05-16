@@ -1,41 +1,47 @@
 
 
 
-# bamazon
-A basic Storefront that uses Node.js and MySQL.
+# The Hunt
+A fullstack web application utilizing frontend and backend technologies
   
 
 ## :mag: Table of contents :mag:
 
   
 
-### [1-Description](https://github.com/nick-d-brown/bamazon#1-description-page_facing_up)
-### [2-Technologies](https://github.com/nick-d-brown/bamazon#2-technologies--computer)
-### [3-Challenges](https://github.com/nick-d-brown/bamazon#3-challenges-screamboom)
-### [4-Issues](https://github.com/nick-d-brown/bamazon#4-issues-questionexclamation)
-### [5-Desired Features](https://github.com/nick-d-brown/bamazon#5-desired-features-star2)
-### [6-Contributors](https://github.com/nick-d-brown/bamazon#6-contributors-raised_hands)
+### [1-Description](https://github.com/NBTLLC/TheHunt#1-description-page_facing_up)
+### [2-Technologies](https://github.com/NBTLLC/TheHunt#2-technologies--computer)
+### [3-Challenges](https://github.com/NBTLLC/TheHunt#3-challenges-screamboom)
+### [4-Issues](https://github.com/NBTLLC/TheHunt#4-issues-questionexclamation)
+### [5-Desired Features](https://github.com/NBTLLC/TheHunt#5-desired-features-star2)
+### [6-Contributors](https://github.com/NBTLLC/TheHunt#6-contributors-raised_hands)
 
  ---
 
 ### 1-Description :page\_facing\_up:
 
-This Node.js application allows the user to interact with a basic product storefront. Upon starting up the bamazonCustomer.js file using node the user will be asked whether they would like to make a purchase. If no, the application exits the store. If yes, the user is asked to enter a product id (from the provided product table) that they would like to purchase. They then must enter a quatity to purchase. 
+Applying to jobs can be a game of numbers.
 
-Upon entering this data the application will first determine whether there is enough product in stock to complete the order. If no, it then re-prompts the user to place a new order (this time with an acceptable quantity). If yes, then the order is placed and the total the user owes is totaled. All of the information is displayed to the user. The table is then re-displayed with updated quantities and the user is again asked whether they would like to make a purchase.
+When applying to many jobs, it is difficult to track who you have talked to and where you are at in a company’s hiring process. Fortunately, "The Hunt" is here to help simplify that process and keep you organized. 
 
-The user also has the ability to access bamazonManager.js. This side of the app allows the user to view all products (including their quantities), view only the products with low quantity(less than 5 products left), increase the quantity of a product, and add a new product.
+This app allows a user to create mini place-cards for each company they are interested in or have applied to. They can then move the card by clicking and dragging it (using the HTML5 Drag and Drop API) to their desired position on the board. The user can also click the edit button (the small pencil in the left corner of each company's card) to view all the information they have gathered on a company. It is here that they can also change the position of a company on the board. 
 
-This app is meant to showcase the ability to interact with a server using MySQL and to utilize Node.js as the medium to interact/dislay the content. 
+To use this application a user simply clicks on the "plus" sign on the top left portion of the screen. The user will then be prompted to fill out an html form that is nested inside of a modal. This form uses both frontend and backend validation to make sure the proper kinds of data are stored in the database. The user then will choose where they would like to place the company they are creating on the board. Delete functionality is also available. Simply click on the "X" in the top right corner of each company card and select "YES" on the confirm modal. 
+
+This web application is primarily single page and focuses on using Node.js, Handlebars.js, Expres.js, and MySQL to store and present user's data. 
+
+Our hope in creating this app is to provide job seekers the opportunity to have more control and better vision over their job application process.
+
 
 > **Note:** Below are three gifs to showcase the working project.
 
 
 
 
-![Customer View](https://github.com/nick-d-brown/bamazon/blob/master/assets/bamazonCustomer1.gif)
-![Manager View - Part 1](https://github.com/nick-d-brown/bamazon/blob/master/assets/bamazonManager1.gif)
-![Manager View - Part 1](https://github.com/nick-d-brown/bamazon/blob/master/assets/bamazonManager2.gif)
+![Main Page](https://github.com/NBTLLC/TheHunt/blob/master/public/images/theHuntHomepage.png)
+![Input New Company](https://github.com/NBTLLC/TheHunt/blob/master/public/images/theHuntInputNew.png)
+![Update Existing Company](https://github.com/NBTLLC/TheHunt/blob/master/public/images/theHuntInputEdit.png)
+![Delete Existing Company](https://github.com/NBTLLC/TheHunt/blob/master/public/images/theHuntDeleteCompany.png)
 
 
 
@@ -47,15 +53,30 @@ This app is meant to showcase the ability to interact with a server using MySQL 
   This project utilizes the following technologies:
 
 
-
+- HTML
+    -HTML5 Drag and Drop API
+- CSS
+    -CSS Variables
 - Vanilla JavaScript
+- [jQuery](https://jquery.com/)
+- [Google Materialize](http://materializecss.com/)
 - [Node.js](https://nodejs.org/en/)
-- [npm colors](https://www.npmjs.com/package/colors)
-- [npm dotenv](https://www.npmjs.com/package/dotenv)
-- [npm inquirer](https://www.npmjs.com/package/inquirer)
-- [npm cli-table](https://www.npmjs.com/package/cli-table)
-- [npm figlet](https://www.npmjs.com/package/figlet)
-- [MySQL](https://www.mysql.com/npm)
+  - [npm colors](https://www.npmjs.com/package/colors)
+  - [npm dotenv](https://www.npmjs.com/package/dotenv)
+  - [npm inquirer](https://www.npmjs.com/package/inquirer)
+  - [npm cli-table](https://www.npmjs.com/package/cli-table)
+  - [npm figlet](https://www.npmjs.com/package/figlet)
+- AJAX
+- [Google Fonts](https://fonts.google.com/)
+- [handlebars.js](https://handlebarsjs.com)
+- [Express.js](https://expressjs.com/)
+- [Heroku](https://www.heroku.com/)
+- [MySQL Database](https://www.mysql.com/)
+- [Sequelize](http://docs.sequelizejs.com/)
+- MVC Design Pattern
+- Unit Testing
+  - Chai
+  - Mocha
 
 ---
 
@@ -63,19 +84,22 @@ This app is meant to showcase the ability to interact with a server using MySQL 
 
 > **Note:** This section is meant for beginners an idea of what the *crux* technology was for this project. Ideally by seeing this first they will be able tackle the hard problem first to start the learning/absorption process as soon as possible.
 
-The main chllenges encountered with this project were interacting with my server using MySQL and determining the proper functional logic to use in my inquirer prompts. 
+The main challenges encountered with this project were primarily working with the HTML5 Drag and Drop API and with using Sequelize. 
 
-I first tackled the issue of using CRUD operations in the JavaScript logic to manipulate the server data. I order to do this though, I first had to learn how to properly structure my Data Types using proper syntax in my Database tables. To learn these data types I used the MySQL Data Types link that is provided below. I then used the second link to learn more about CRUD operations. This was mainly a start though, I utilized the Udemy course on MySQL by Colt Steele and other resources to build my knowledge. Research is your friend. 
+The Drag and Drop issues mainly required a lot of tinkering and manual testing. Most of our bugs were found when writing the logic. Sequelize issues stemmed mainly from getting used to proper model structure and making proper calls to the database. 
+We did also run into the issue of non-boolean logic when using handlebars.js. This was solved by writing our own handlebars helpers functions to call upon. 
 
-After building my knowledge of these two things the rest of the project was simply doing my best to keep things simple. I found myself overcomplicating the logic from time to time. 
 
 Use the links listed below to learn more about the technology and remember **you will eventually learn how everything works!**
 
 ---**Suggested Links**---
 
 - [MySQL Data Types](https://dev.mysql.com/doc/refman/5.7/en/data-type-overview.html)
-- [MySQL CRUD Operations](https://www.nodejsera.com/nodejs-tutorial-day17-crud-in-mysql.html)
-- [Colt Steele MySQL Course](https://www.udemy.com/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/)
+- [Sequelize Docs](http://docs.sequelizejs.com/)
+- [Handlebars.js Docs Docs](https://handlebarsjs.com/)
+- [HTML5 Drag and Drop](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API
+
+
 
 ### 4-Issues :question::exclamation:
 
@@ -87,16 +111,23 @@ Use the links listed below to learn more about the technology and remember **you
 
   Below is a list of possible features that we would like to add to the project. If You would like to propose a feature to add please feel free to create a PR to add it to the list. **We love it when others can help propose ideas!**
 
+1.	(.. if you would like to suggest an idea, insert it here..)
+2.	Mobile Responsiveness
+3.	User Authentication
+4.	Google Maps API
+5.	File Storage and Management
 
 ---
 
 ### 6-Contributors :raised_hands:
 
 - [Nick Brown](https://github.com/nick-d-brown/)
+- [Toney Keysaw](https://github.com/ToneyK)
+- [Brandon Morin](https://github.com/Morinventiv)
 
 > **PS:** If you would like to contribute please contact Nick Brown on GitHub or at n.brown.professional@gmail.com. We welcome bot first time contributors and experienced developers with critical feedback. 
 
 ---
 
 ## Thanks for visiting!
-### [Top of Page](https://github.com/nick-d-brown/bamazon#bamazon)
+### [Top of Page](https://github.com/NBTLLC/TheHunt)

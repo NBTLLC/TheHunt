@@ -1,4 +1,5 @@
-
+// This file is used to test functions in their most basic form
+//  they are modularized here so that it is confirmed they function without any other external code
 
 // check if the input object has any null sections and replace them
 var checkIfDataNull = function(data) {

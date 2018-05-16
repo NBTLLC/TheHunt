@@ -12,7 +12,6 @@ font-family: 'Great Vibes', cursive; */
 
 /* To reference in css use syntax ->  var(--whatever-the-root-colorname-is)*/
 
-
 :root {
   --primary-color-1:#C3073F;
   --accent-color-1:#950740;
@@ -30,37 +29,13 @@ font-family: 'Great Vibes', cursive; */
 
 } 
 
+/* Main HTML css changes */
 body {
-    /* background-color: var(--background); */
-
-    /* possible geometric backgrounds */
-    /* black geometric 1 */
-    /* background-image: url(http://ak5.picdn.net/shutterstock/videos/10747775/thumb/1.jpg); */
-    /* black geometric 2 */
-    /* background-image: url(http://papers.co/wallpaper/papers.co-vj27-low-poly-art-dark-pattern-25-wallpaper.jpg); */
-    /* black geometric 3 */
-    /* background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/04/11/71/89581ac0e491778.jpg); */
-    /* background-image: url(https://images.unsplash.com/photo-1520588498176-b032d1e70b74?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a4704ad05be721ec7f384f9656b6285a&auto=format&fit=crop&w=1086&q=80); */
     background-image: url(https://images.unsplash.com/photo-1486607303850-bc051a4ffad4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e653d397d2d335009978a8573613ce1d&auto=format&fit=crop&w=1953&q=80);
-    /* background: #EF3B36;  fallback for old browsers */
-    /* background: -webkit-linear-gradient(to top, #FFFFFF, #EF3B36);  Chrome 10-25, Safari 5.1-6 */
-    /* background: linear-gradient(to bottom, #FFFFFF, #EF3B36); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
     background-repeat: no-repeat;
     background-size: cover;
     box-sizing: border-box;
-    /* font-family: 'Roboto', sans-serif; */
-    /* font-family: 'Open Sans', sans-serif; */
     font-family: 'Montserrat', sans-serif;
-    /* background: linear-gradient(230deg, #a24bcf, #4b79cf, #4bc5cf); */
-    /* background: linear-gradient(230deg, rgba(226, 0, 72, 0.55),  rgba(6, 121, 159, 0.556), rgba(255, 132, 0, 0.516), rgba(106, 228, 0, 0.557)); */
-    /* background-size: 300% 300%; */
-    /* -webkit-animation: AnimationName 20s ease infinite; */
-    /* -moz-animation: AnimationName 20s ease infinite; */
-    /* -o-animation: AnimationName 20s ease infinite; */
-    /* animation: AnimationName 20s ease infinite; */
-
-
 }
 
 textarea {
@@ -120,38 +95,20 @@ textarea {
 
 /*  3 main column headers  */
 
-/* .main-column-header-style {
-     color: var(--white);
-    font-size: 2em; 
-     background-color: blue; 
-}*/
 .main-column-header {
     color: var(--white);
     font-size: 2.5em;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     text-decoration: underline;
-    /* background-color: blue; */
 }
 
 .main-column-section {
     border-radius: 10px;
-    /* background-color: var(--lighter-red); */
 }
-.main-column-section:nth-child(odd) {
-/* background-color: var(--primary-color-1) */
 
-}
-.main-column-section:nth-child(even) {
-/* background-color: var(--primary-color-3) */
-
-}
 
 /*  6 sub column headers  */
-
-/* .sub-column-headers {
- 
-} */
 
 .sub-column-content {
     margin-top: 5px;
@@ -187,26 +144,18 @@ textarea {
 	padding: 0px;
 	height: 135px;
 	text-align: center;
-	/* background-color: var(--primary-color-3); */
 	color: var(--white);
 	border-radius: 10px;
 }
-/* .sub-column-content-empty:hover {
-	margin-top: 0px;
-	padding: 0px;
-	height: 135px;
-	text-align: center;
-	background-color: var(--primary-color-3);
-	color: var(--white);
-	border-radius: 10px;
-} */
 
+/* spacing for the drag and drop functionality */
+/* this changes the available space to drop company cards into */
 .dragDrop {
 	min-height: 200px;
-	padding-bottom: 135px;
+	padding-bottom: 200px;
 }
 
-
+/* Modal edit and delete buttons */
 .edit {
 	position: relative;
   top: 10px;
@@ -220,6 +169,7 @@ textarea {
   cursor: pointer;
 }
 
+/*  Mondal form styling */
 #deleteConfirm{
     background-color: red;
     color: var(--white);
