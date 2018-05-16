@@ -18,6 +18,10 @@ module.exports = function (app) {
                 return res.render('index', companyInfo)
             });
     });
+    // html route loads about.html to display the entire webpage
+    app.get("/about", function (req, res) {
+                return res.render('about')
+    });
     // GET route loads all companies from database
     app.get("/api/companies", function (req, res) {
         db.Company.findAll({})

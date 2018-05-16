@@ -13,8 +13,8 @@
 				<span class="serious-title">Hunt</span>
 			</h1>
 			<div class="col s1">
-				<a class="btn-floating btn-large waves-effect waves-light page-options-button">
-					<i class="material-icons">dehaze</i>
+				<a class="btn-floating btn-large waves-effect waves-light page-options-button dropdown-trigger btn" data-target='siteOptions'>
+					<i class="material-icons" id="dropDownHook">dehaze</i>
 				</a>
 			</div>
 		</div>
@@ -99,6 +99,12 @@
 		</div>
 	</div>
 </div>
+
+<footer>
+	<p class="col s12 center">NBTLLC |
+		<a href="https://github.com/NBTLLC/TheHunt">Github Repo</a>
+	</p>
+</footer>
 
 {{!-- add a company modal --}}
 
@@ -192,3 +198,20 @@
 		</div>
 	</div>
 
+{{!-- sidenav  --}}
+
+<!-- Dropdown Structure -->
+<ul id='siteOptions' class='dropdown-content'>
+		<li class="divider" tabindex="-1"></li>
+	<li>
+		<a href="/" class="center page-nav-buttons">Home<i class="material-icons page-nav-icons">blur_linear</i></a>
+		
+	</li>
+		<li class="divider" tabindex="-1"></li>
+	<li>
+		<a href="/about" class="center page-nav-buttons">about<i class="material-icons page-nav-icons">account_circle</i></a>
+		
+	</li>
+	<li class="divider" tabindex="-1"></li>
+	>
+</ul>
