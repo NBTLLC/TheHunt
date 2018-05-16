@@ -1,4 +1,4 @@
-/* CSS styling for The Hunt Website */
+ /* CSS styling for The Hunt Website */
 
 /* imported font families */
 
@@ -32,6 +32,7 @@ font-family: 'Great Vibes', cursive; */
 /* Main HTML css changes */
 body {
     background-image: url(https://images.unsplash.com/photo-1486607303850-bc051a4ffad4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e653d397d2d335009978a8573613ce1d&auto=format&fit=crop&w=1953&q=80);
+    /*  Photo Credit: Alex Shutin - https://unsplash.com/@fiveamstories */
     background-repeat: no-repeat;
     background-size: cover;
     box-sizing: border-box;
@@ -44,6 +45,8 @@ textarea {
     min-height: 100px;
     background-color: var(--white);
 } 
+
+/* =============Home Page============= */
 
 /* Title styles */
 
@@ -213,3 +216,39 @@ form .waves-input-wrapper{
   cursor:  pointer;
 }
 
+/*   DropDown Page Nav */
+
+.dropdown-content li .page-nav-buttons {
+    color: var(--dark-slate-blue);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.page-nav-icons {
+    color: var(--dark-slate-blue);
+    padding: 0 24px;
+}
+
+/* =============About Page============= */
+/* Uses the home page as a style template */
+
+.authors-header {
+    text-align: center;
+    color: var(--white);
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+}
+
+.body-container-about {
+    background-color: var(--black);
+
+    height: 100%;
+}
+
+.author-profile-cards {
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.card .card-image .card-title {
+    color: var(--black);
+}

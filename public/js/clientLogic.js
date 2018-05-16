@@ -4,6 +4,7 @@ $(document).ready(function () {
 	// initializes materialize functionality for drop down and modals - Do Not Remove
 	$('select').formSelect();
 	$('.modal').modal();
+	$('.dropdown-trigger').dropdown();
 
 	// Add new company modal trigger
 	$('#inputModalTrigger').on("click", function () {
