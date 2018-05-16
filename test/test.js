@@ -1,5 +1,6 @@
+// This is the file where the actual tests are written to test the site's functions
+
 var expect = require("chai").expect;
-// var checkNull = require("../public/js/clientLogic");
 var checkNull = require("./functionsToTest/checkNull");
 
 // objects to run through checkNull
